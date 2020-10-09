@@ -8,6 +8,8 @@
 <title>Language Page</title>
 </head>
 <body>
+	<a href="/languages">Home</a>
+	<br>
 	<h1><c:out value="${language.name}"/></h1>
 	<p>Creator: <c:out value="${language.creator}"/></p>
 	<p>Current Version: <c:out value="${language.currentVersion}"/></p>

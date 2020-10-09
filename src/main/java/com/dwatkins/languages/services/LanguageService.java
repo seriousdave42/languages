@@ -34,6 +34,10 @@ public class LanguageService {
 		}
 	}
 	
+	public Language updateLanguage(Language language) {
+		return languageRepository.save(language);
+	}
+	
 	public Language updateLanguage(Long id, String name, String creator, String currentVersion) {
 		Optional<Language> optionalLang = languageRepository.findById(id);
 		Language updateLang = optionalLang.get();

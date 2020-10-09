@@ -21,13 +21,16 @@
 		<tbody>
 			<c:forEach items="${languages}" var="language">
 			<tr>
-				<td><a href="languages/${language.id}"><c:out value="${language.name}"/></a></td>
+				<td><a href="/languages/${language.id}"><c:out value="${language.name}"/></a></td>
 				<td><c:out value="${language.creator}"/></td>
 				<td><c:out value="${language.currentVersion}"/></td>
 				<td>
-					<a href="#">Edit</a>
+					<a href="/languages/${language.id}/edit">Edit</a>
 					<span> | </span>
-					<a href="#">Delete</a>
+					<form action="/languages/${language.id}" method="post">
+						<input type="hidden" name="_method" value="delete">
+						<input type="submit" value="Delete">
+					</form>
 				</td>
 			</tr>
 			</c:forEach>
